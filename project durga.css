@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+a {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 16px auto;
+    border: 4px solid #7a8db9;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #7a8db9;
+    padding: 12px 16px;
+    background: #fff;
+    gap: 12px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    user-select: none;
+}
+
+.logo .orange-text {
+    font-family: serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: #e87e22;
+    line-height: 1;
+}
+
+.logo .black-text {
+    font-size: 2.25rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.logo-subtext {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #7a8db9;
+    user-select: none;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+}
+
+.btn-appointment {
+    background-color: #e87e22;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 9999px;
+    padding: 6px 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.btn-appointment:hover {
+    background-color: #d36f1c;
+}
+
+.btn-appointment i {
+    font-size: 14px;
+}
+
+.phone-box {
+    border: 1.5px solid #000;
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    cursor: default;
+    user-select: none;
+}
+
+.phone-box i {
+    font-size: 14px;
+}
+
+/* Main content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+    }
+}
+
+/* Left image container */
+.left-image-container {
+    position: relative;
+    flex: 1;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .left-image-container {
+        min-height: 400px;
+    }
+}
+
+.left-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay box */
+.overlay-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(255 255 255 / 0.7);
+    backdrop-filter: blur(6px);
+    padding: 16px 24px;
+    max-width: 320px;
+}
+
+.overlay-box p:first-child {
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0 0 4px 0;
+}
+
+.overlay-box p:nth-child(2) {
+    font-size: 11px;
+    margin: 0 0 12px 0;
+}
+
+.overlay-box .btn-appointment {
+    font-size: 12px;
+    padding: 6px 16px;
+}
+
+/* Right form container */
+.right-form-container {
+    border: 1.5px solid #ff00ff;
+    padding: 16px 24px;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.right-form-container p:first-child {
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0 0 6px 0;
+}
+
+.right-form-container p:nth-child(2) {
+    font-size: 11px;
+    margin: 0 0 16px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input[type="text"] {
+    font-size: 12px;
+    padding: 8px 16px;
+    border: 1.5px solid #e87e22;
+    border-radius: 9999px;
+    outline-offset: 2px;
+    outline-color: transparent;
+    color: #000;
+    font-family: inherit;
+    transition: outline-color 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #e87e22;
+}
+
+input[type="text"]:focus {
+    outline-color: #e87e22;
+}
+
+.captcha-container {
+    display: flex;
+    width: 100%;
+}
+
+.captcha-container input[type="text"] {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    flex-grow: 1;
+}
+
+.captcha-code {
+    background-color: #3a1f0a;
+    color: #fff;
+    font-size: 12px;
+    padding: 8px 16px;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    min-width: 60px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 8px;
+    line-height: 1.2;
+    user-select: none;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-top: 3px;
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid #000;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.checkbox-container label a {
+    font-size: 8px;
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+}
+
+.checkbox-container label a:hover {
+    opacity: 0.8;
+}
+
+.btn-submit {
+    background-color: #e87e22;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 9999px;
+    padding: 8px 0;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #d36f1c;
+}
+
+/* Bottom stats bar */
+.stats-bar {
+    border-top: 4px solid #7a8db9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #000;
+    gap: 8px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.stat-item i {
+    color: #7a5a2a;
+    font-size: 16px;
+    min-width: 16px;
+    text-align: center;
+}
+
+.stat-highlight {
+    color: #e87e22;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .right-form-container {
+        border-width: 1.5px 0 0 0;
+        max-width: 100%;
+        padding: 16px 16px 24px 16px;
+    }
+
+    .overlay-box {
+        max-width: 100%;
+        padding: 12px 16px;
+    }
+
+    .stats-bar {
+        font-size: 9px;
+        padding: 8px 8px;
+        gap: 6px;
+    }
+
+    .stat-item i {
+        font-size: 14px;
+        min-width: 14px;
+    }
+
+    .btn-appointment,
+    .btn-submit {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    input[type="text"] {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .captcha-code {
+        font-size: 11px;
+        padding: 6px 12px;
+        min-width: 50px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+/* Top text */
+.top-text {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+/* Patients grid */
+.patients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.patient {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100px;
+    min-width: 100px;
+}
+
+.patient-photos {
+    display: flex;
+    gap: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+}
+
+.patient-photos img {
+    width: 50%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.patient-name {
+    font-weight: 700;
+    font-size: 12px;
+    color: #111;
+    margin: 0;
+}
+
+.patient-location {
+    font-size: 12px;
+    color: #f97316;
+    /* orange */
+    margin: 0;
+}
+
+/* Section heading */
+.section-heading {
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+.section-subheading {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Why choose container */
+.why-choose-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features list */
+.features-list {
+    flex: 1 1 300px;
+    max-width: 400px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.features-list li:last-child {
+    margin-bottom: 0;
+}
+
+.plus-icon {
+    color: #f97316;
+    font-weight: 700;
+    font-size: 18px;
+    user-select: none;
+    cursor: default;
+    line-height: 1;
+}
+
+/* Image container */
+.why-image-container {
+    flex: 1 1 300px;
+    max-width: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
+}
+
+.why-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+
+/* Bottom section */
+.bottom-section {
+    max-width: 600px;
+    margin: 64px auto 0 auto;
+    text-align: center;
+}
+
+.bottom-section h3 {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+.bottom-section p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .patients-grid {
+        gap: 16px;
+    }
+
+    .patient {
+        width: 80px;
+        min-width: 80px;
+    }
+
+    .patient-photos {
+        height: 64px;
+    }
+
+    .patient-photos img {
+        height: 64px;
+    }
+
+    .features-list li {
+        font-size: 12px;
+    }
+
+    .section-heading {
+        font-size: 16px;
+    }
+
+    .section-subheading {
+        font-size: 13px;
+        margin-bottom: 32px;
+    }
+
+    .why-choose-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features-list,
+    .why-image-container {
+        max-width: 100%;
+        flex: none;
+    }
+
+    .why-image-container {
+        width: 100%;
+    }
+
+    .bottom-section {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .patient {
+        width: 72px;
+        min-width: 72px;
+    }
+
+    .patient-photos {
+        height: 56px;
+    }
+
+    .patient-photos img {
+        height: 56px;
+    }
+
+    .features-list li {
+        font-size: 11px;
+    }
+
+    .section-heading {
+        font-size: 15px;
+    }
+
+    .section-subheading {
+        font-size: 12px;
+    }
+
+    .bottom-section h3 {
+        font-size: 16px;
+    }
+
+    .bottom-section p {
+        font-size: 13px;
+    }
+}
